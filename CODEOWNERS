@@ -192,7 +192,6 @@ source/_integrations/cisco_mobility_express.markdown @fbradyirl
 source/_integrations/cisco_webex_teams.markdown @fbradyirl
 source/_integrations/climate.markdown @home-assistant/core
 source/_integrations/climate.mqtt.markdown @emontnemery @jbouwh @bdraco
-source/_integrations/cloud.markdown @home-assistant/cloud
 source/_integrations/cloudflare.markdown @ludeeus @ctalkington
 source/_integrations/cloudflare_r2.markdown @corrreia
 source/_integrations/co2signal.markdown @jpbede @VIKTORVAV99
@@ -565,6 +564,7 @@ source/_integrations/integration.markdown @dgomes
 source/_integrations/intelliclima.markdown @dvdinth
 source/_integrations/intellifire.markdown @jeeftor
 source/_integrations/intent_script.markdown @arturpragacz
+source/_integrations/intesis_modbus.markdown @TimoPtr
 source/_integrations/intesishome.markdown @jnimmo
 source/_integrations/inventor.markdown @chemelli74 @rokam
 source/_integrations/iometer.markdown @jukrebs
@@ -1208,6 +1208,7 @@ source/_integrations/trane.markdown @bdraco
 source/_integrations/transmission.markdown @engrbm87 @JPHutchins @andrew-codechimp
 source/_integrations/trend.markdown @jpbede
 source/_integrations/triggercmd.markdown @rvmey
+source/_integrations/trimlight.markdown @spdevpro @bsholy
 source/_integrations/trmnl.markdown @joostlek
 source/_integrations/tts.markdown @home-assistant/core
 source/_integrations/tuya.markdown @Tuya @zlinoliver
@@ -1265,6 +1266,7 @@ source/_integrations/vivotek.markdown @HarlemSquirrel
 source/_integrations/vizio.markdown @raman325
 source/_integrations/vlc_telnet.markdown @rodripf @MartinHjelmare
 source/_integrations/vodafone_station.markdown @paoloantinori @chemelli74
+source/_integrations/voice_support.markdown @synesthesiam @arturpragacz
 source/_integrations/voip.markdown @home-assistant/core @jaminh
 source/_integrations/volkszaehler.markdown @StefanSchoof
 source/_integrations/volumio.markdown @OnFreund
@@ -1449,8 +1451,6 @@ source/_actions/climate.set_temperature.markdown @home-assistant/core
 source/_actions/climate.toggle.markdown @home-assistant/core
 source/_actions/climate.turn_off.markdown @home-assistant/core
 source/_actions/climate.turn_on.markdown @home-assistant/core
-source/_actions/cloud.remote_connect.markdown @home-assistant/cloud
-source/_actions/cloud.remote_disconnect.markdown @home-assistant/cloud
 source/_actions/collection_image.select_first.markdown @karwosts
 source/_actions/collection_image.select_image.markdown @karwosts
 source/_actions/collection_image.select_last.markdown @karwosts
@@ -1558,6 +1558,7 @@ source/_actions/fully_kiosk.start_application.markdown @cgarwood
 source/_actions/geniushub.set_switch_override.markdown @manzanotti
 source/_actions/geniushub.set_zone_mode.markdown @manzanotti
 source/_actions/geniushub.set_zone_override.markdown @manzanotti
+source/_actions/geosphere_austria_warnings.get_warnings.markdown @tklecka
 source/_actions/google.create_event.markdown @allenporter
 source/_actions/google_assistant.reload.markdown @home-assistant/cloud
 source/_actions/google_assistant.request_sync.markdown @home-assistant/cloud
@@ -1665,6 +1666,7 @@ source/_actions/homematicip_cloud.dump_hap_config.markdown @hahn-th @lackas
 source/_actions/homematicip_cloud.reset_energy_counter.markdown @hahn-th @lackas
 source/_actions/homematicip_cloud.set_active_climate_profile.markdown @hahn-th @lackas
 source/_actions/homematicip_cloud.set_home_cooling_mode.markdown @hahn-th @lackas
+source/_actions/honeywell.set_hold_until.markdown @mkmer
 source/_actions/html5.dismiss_message.markdown @alexyao2015 @tr4nt0r
 source/_actions/html5.send_message.markdown @alexyao2015 @tr4nt0r
 source/_actions/huawei_lte.resume_integration.markdown @fphammerle
@@ -1794,6 +1796,7 @@ source/_actions/lifx.effect_sky.markdown @Djelibeybi
 source/_actions/lifx.effect_stop.markdown @Djelibeybi
 source/_actions/lifx.paint_theme.markdown @Djelibeybi
 source/_actions/lifx.set_hev_cycle_state.markdown @Djelibeybi
+source/_actions/lifx.set_mood.markdown @Djelibeybi
 source/_actions/lifx.set_state.markdown @Djelibeybi
 source/_actions/light.toggle.markdown @home-assistant/core
 source/_actions/light.turn_off.markdown @home-assistant/core
@@ -2158,12 +2161,14 @@ source/_actions/switchbot.add_password.markdown @danielhiversen @RenierM26 @murt
 source/_actions/switchbot_cloud.upload_art_frame_image.markdown @SeraphicRav @laurence-presland @Gigatrappeur @XiaoLing-git
 source/_actions/switcher_kis.set_auto_off.markdown @thecode @YogevBokobza
 source/_actions/switcher_kis.turn_on_with_timer.markdown @thecode @YogevBokobza
+source/_actions/system_bridge.dismiss_message.markdown @timmo001
 source/_actions/system_bridge.get_process_by_id.markdown @timmo001
 source/_actions/system_bridge.get_processes_by_name.markdown @timmo001
 source/_actions/system_bridge.open_path.markdown @timmo001
 source/_actions/system_bridge.open_url.markdown @timmo001
 source/_actions/system_bridge.power_command.markdown @timmo001
 source/_actions/system_bridge.send_keypress.markdown @timmo001
+source/_actions/system_bridge.send_message.markdown @timmo001
 source/_actions/system_bridge.send_text.markdown @timmo001
 source/_actions/tado.add_meter_reading.markdown @erwindouna
 source/_actions/tado.set_climate_temperature_offset.markdown @erwindouna
@@ -2282,6 +2287,8 @@ source/_actions/velbus.scan.markdown @Cereal2nd @brefra
 source/_actions/velbus.set_memo_text.markdown @Cereal2nd @brefra
 source/_actions/velbus.sync_clock.markdown @Cereal2nd @brefra
 source/_actions/vesync.update_devices.markdown @markperdue @webdjoe @thegardenmonkey @cdnninja @iprak @sapuseven
+source/_actions/vicare.get_circulation_schedule.markdown @CFenner @lackas
+source/_actions/vicare.set_circulation_schedule.markdown @CFenner @lackas
 source/_actions/vicare.set_vicare_mode.markdown @CFenner @lackas
 source/_actions/vizio.send_text.markdown @raman325
 source/_actions/vizio.update_setting.markdown @raman325
@@ -2355,6 +2362,7 @@ source/_actions/zha.warning_device_squawk.markdown @dmulcahey @adminiuga @puddly
 source/_actions/zha.warning_device_warn.markdown @dmulcahey @adminiuga @puddly @TheJulianJES
 source/_actions/zone.reload.markdown @home-assistant/core
 source/_actions/zoneminder.set_run_state.markdown @SteveGilvarry @nabbi @rohankapoorcom
+source/_actions/zonneplan.get_electricity_prices.markdown @erwindouna
 source/_actions/zwave_js.bulk_set_partial_config_parameters.markdown @home-assistant/z-wave
 source/_actions/zwave_js.clear_lock_usercode.markdown @home-assistant/z-wave
 source/_actions/zwave_js.delete_all_credentials.markdown @home-assistant/z-wave
