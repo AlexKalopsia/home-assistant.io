@@ -4,7 +4,7 @@ ha_release: '0.20'
 ha_domain: lastfm
 ---
 
-The **Last.fm** {% term integration %} lets you monitor the listening activity of [Last.fm](https://www.last.fm/) users. It creates a sensor for each user you add, showing whether they are currently scrobbling and what they are listening to.
+The **Last.fm** {% term integration %} lets you monitor the listening activity of [Last.fm](https://www.last.fm/) users. It creates a sensor for each user you add, showing whether they are currently scrobbling and what they are listening to. Optionally, you can also manually scrobble tracks to Last.fm.
 
 ## Prerequisites
 
@@ -20,7 +20,9 @@ Last.fm username:
   description: "Your Last.fm username. This is the main user for the integration and is used to look up your friends list in the next step."
 {% endconfiguration_basic %}
 
-After entering your API key and Last.fm username, you are asked to select additional Last.fm users to track. Your friends list is shown for convenience, but you can also enter any Last.fm username manually.
+After entering your API key and Last.fm username, you are asked to select additional Last.fm users to track. Your friends list is shown for convenience, but you can also enter any Last.fm username manually. 
+
+In the final step you can optionally enable manual scrobbling for each user by providing the API secret once, and then authenticating each user on Last.fm.
 
 ## Configuration options
 
@@ -45,6 +47,10 @@ Each sensor also provides the following attributes:
 - **`last_played`**: The last track the user scrobbled, formatted as "Artist - Title".
 - **`play_count`**: The total number of tracks the user has scrobbled on Last.fm.
 - **`top_played`**: The user's most played track, formatted as "Artist - Title".
+
+### Actions
+
+- **`scrobble`**: Passing Artist and Title, it is possible to manually scrobble songs to Last.fm..
 
 ## Data updates
 
